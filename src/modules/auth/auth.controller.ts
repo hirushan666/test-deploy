@@ -29,7 +29,7 @@ export class AuthController {
 
     // Set access_token as a regular cookie (not HttpOnly, so it is accessible from frontend)
     res.cookie('access_token', access_token, {
-      // domain: process.env.COOKIE_DOMAIN === 'localhost' ? 'localhost' : '.ngrok-free.dev',
+      domain: process.env.COOKIE_DOMAIN === 'localhost' ? 'localhost' : '.railway.app',
       httpOnly: false,
       secure: process.env.COOKIE_SECURE === 'true',
       sameSite: process.env.COOKIE_SAMESITE === 'lax' ? 'lax' : 'none',
